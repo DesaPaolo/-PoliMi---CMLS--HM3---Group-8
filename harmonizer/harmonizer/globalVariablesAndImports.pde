@@ -3,6 +3,15 @@ import controlP5.*;
 ControlP5 cp5;
 
 Knob volume;
+ListBox l8;
+
+ListBox l3;
+ListBox l5;
+ListBox l7;
+Toggle t_bypass;
+Toggle t_noob;
+Toggle t_delay;
+Toggle t_reverb;
 int volumeValue;
 
 int toggleValue; //ON/OFF
