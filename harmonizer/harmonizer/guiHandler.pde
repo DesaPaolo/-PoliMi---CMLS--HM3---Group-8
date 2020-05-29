@@ -13,55 +13,55 @@ public void guiInit() {
   ControlP5.printPublicMethodsFor(ListBox.class);
   
   //ON/OFF toggle
- t_bypass= cp5.addToggle("bypass")
+ t_bypass= cp5.addToggle("bypass.")
      .setPosition(80,100)
      .setSize(50,20)
      .setMode(ControlP5.SWITCH)
      .setFont(font);
      
-     cp5.getController("bypass")
+     cp5.getController("bypass.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
      
- t_noob= cp5.addToggle("noob")
+ t_noob= cp5.addToggle("noob.")
      .setPosition(70,300)
      .setSize(50,20)  
      .setValue(true)
      .setMode(ControlP5.SWITCH)
      .setFont(font);
      
-     cp5.getController("noob")
+     cp5.getController("noob.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
      
-t_delay= cp5.addToggle("delay")
+t_delay= cp5.addToggle("delay.")
      .setPosition(710,100)
      .setSize(50,20)  
      .setValue(true)
      .setMode(ControlP5.SWITCH)
      .setFont(font);
      
-     cp5.getController("delay")
+     cp5.getController("delay.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
      
-t_reverb= cp5.addToggle("reverb")
+t_reverb= cp5.addToggle("reverb.")
      .setPosition(1030,100)
      .setSize(50,20)  
      .setValue(true)
      .setMode(ControlP5.SWITCH)
      .setFont(font);
      
-     cp5.getController("reverb")
+     cp5.getController("reverb.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
@@ -69,7 +69,7 @@ t_reverb= cp5.addToggle("reverb")
      ;
      
   //list ottava
-  l8 = cp5.addListBox("ottava")
+  l8 = cp5.addListBox("ottava.")
          .setPosition(70, 360)
          .setSize(120, 120)
          .setItemHeight(20)
@@ -80,20 +80,20 @@ t_reverb= cp5.addToggle("reverb")
          //.setColorForeground(color(255, 100,0))
          ;
          
-         cp5.getController("ottava")
+         cp5.getController("ottava.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
          
-  l8.addItem("sopra", 1);
-  l8.addItem("sotto", 2);
+  l8.addItem("sopra.", 1);
+  l8.addItem("sotto.", 2);
   
 
    
    //list terza
-  l3 = cp5.addListBox("terza")
+  l3 = cp5.addListBox("terza.")
          .setPosition(370, 360)
          .setSize(120, 120)
          .setItemHeight(20)
@@ -104,17 +104,17 @@ t_reverb= cp5.addToggle("reverb")
          //.setColorForeground(color(255, 100,0))
          ;
          
-  cp5.getController("terza")
+  cp5.getController("terza.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
-   l3.addItem("maj", 1);
-   l3.addItem("min", 2);
+   l3.addItem("maj.", 1);
+   l3.addItem("min.", 2);
    
     //list quinta
-   l5 = cp5.addListBox("quinta")
+   l5 = cp5.addListBox("quinta.")
          .setPosition(710, 360)
          .setSize(120, 120)
          .setItemHeight(20)
@@ -125,15 +125,15 @@ t_reverb= cp5.addToggle("reverb")
          //.setColorForeground(color(255, 100,0))
          ;
          
-    cp5.getController("quinta")
+    cp5.getController("quinta.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;      
-   l5.addItem("aumentata", 1);
-   l5.addItem("giusta", 2);
-   l5.addItem("diminuita", 3);
+   l5.addItem("aumentata.", 1);
+   l5.addItem("giusta.", 2);
+   l5.addItem("diminuita.", 3);
    
    
    //list settima
@@ -154,15 +154,15 @@ t_reverb= cp5.addToggle("reverb")
      .toUpperCase(false)
      .setSize(15)
      ;      
-   l7.addItem("maj", 1);
-   l7.addItem("min", 2);
+   l7.addItem("maj.", 1);
+   l7.addItem("min.", 2);
    
   
  
      
      
   //Volume knob
-  volume = cp5.addKnob("volume")
+  volume = cp5.addKnob("volume.")
     .setRange(0, 100)
     .setValue(50)
     .setPosition(370, 70)
@@ -170,7 +170,7 @@ t_reverb= cp5.addToggle("reverb")
     .setDragDirection(Knob.VERTICAL)
     .setFont(font);
     
-      cp5.getController("volume")
+      cp5.getController("volume.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
