@@ -7,10 +7,10 @@ public void guiInit() {
   volumeValue = 50;
   toggleValue = 0;
   
-  PFont pfont = createFont("Courier new",10,true); // use true/false for smooth/no-smooth
+  PFont pfont = createFont("Courier new",10,false); // use true/false for smooth/no-smooth
   ControlFont font = new ControlFont(pfont,14);
   
-  ControlP5.printPublicMethodsFor(ListBox.class);
+
   
   //ON/OFF toggle
  t_bypass= cp5.addToggle("bypass.")
@@ -87,8 +87,10 @@ t_reverb= cp5.addToggle("reverb.")
      .setSize(15)
      ;
          
-  l8.addItem("sopra.", 1);
-  l8.addItem("sotto.", 2);
+  l8.addItem("sopra", 1);
+  l8.addItem("sOTTO.", 2);
+  
+  
   
 
    
@@ -104,14 +106,16 @@ t_reverb= cp5.addToggle("reverb.")
          //.setColorForeground(color(255, 100,0))
          ;
          
-  cp5.getController("terza.")
+  
+   l3.addItem("maj.", 1);
+   l3.addItem("min.", 2);
+   
+   cp5.getController("terza.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
      .setSize(15)
      ;
-   l3.addItem("maj.", 1);
-   l3.addItem("min.", 2);
    
     //list quinta
    l5 = cp5.addListBox("quinta.")
@@ -137,7 +141,7 @@ t_reverb= cp5.addToggle("reverb.")
    
    
    //list settima
-   l7 = cp5.addListBox("settima")
+   l7 = cp5.addListBox("settima.")
          .setPosition(1030, 360)
          .setSize(120, 120)
          .setItemHeight(20)
@@ -148,7 +152,7 @@ t_reverb= cp5.addToggle("reverb.")
          //.setColorForeground(color(255, 100,0))
          ;
          
-    cp5.getController("settima")
+    cp5.getController("settima.")
      .getCaptionLabel()
      .setFont(font)
      .toUpperCase(false)
