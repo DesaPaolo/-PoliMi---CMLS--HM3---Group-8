@@ -1,10 +1,12 @@
 
+//Midi init
 public void midiInit(){
   tempNotes = new ArrayList<Note>();
   alreadyInTempChord = false;
-  maxNumVoices = 3;
+  maxNumVoices = 8;
 }
 
+//Note ON
 public void noteOn(int midiNote){
   
   Note newNote = new Note(midiNote);
@@ -31,6 +33,7 @@ public void noteOn(int midiNote){
     }
   }
   
+  //print
   println("tempNotes: ");
   for (int i = 0; i < tempNotes.size(); i++) {
     println(tempNotes.get(i).getPitch());
@@ -38,7 +41,7 @@ public void noteOn(int midiNote){
 
 }
 
-
+//Note OFF
 public void noteOff(int midiNote){
   
   for (int c = 0; c < tempNotes.size(); c -= -1) {
@@ -47,6 +50,7 @@ public void noteOff(int midiNote){
     }
   }
   
+  //print
   println("tempNotes: ");
   for (int i = 0; i < tempNotes.size(); i++) {
     println(tempNotes.get(i).getPitch());

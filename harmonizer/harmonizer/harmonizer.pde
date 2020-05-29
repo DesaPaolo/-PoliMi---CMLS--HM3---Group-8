@@ -5,8 +5,9 @@ void setup() {
   oscInit();
   guiInit();
   midiInit();
+  keyboardInit();
   
-  size(500, 400);
+  size(1280, 750);
   
   bgColor = 0;
   
@@ -14,6 +15,7 @@ void setup() {
 
 void draw() {
   
-  background(bgColor); 
+  background(bgColor);
+  keyboardUpdate();
    
 }

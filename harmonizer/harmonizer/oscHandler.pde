@@ -1,5 +1,5 @@
 
-//Init
+// OSC init
 public void oscInit() {
   osc = new OscP5(this, 12000);
   supercollider = new NetAddress("127.0.0.1", 57120);
@@ -16,13 +16,13 @@ public void sendOSCMessagge(String addressPattern, int value) {
 //Listen Supercollider
 void oscEvent(OscMessage theOscMessage) {
   
-  // print the address pattern, typetag and the first argument of the received OscMessage 
+  // Print the address pattern, typetag and the first argument of the received OscMessage 
   println("### received an osc message.");
   println(" addrpattern: " + theOscMessage.addrPattern());
   println(" typetag: " + theOscMessage.typetag());
   println(" arg: " + theOscMessage.get(0).intValue());
  
-  
+  // Not ON/ Note OFF
   switch(theOscMessage.addrPattern()){
     case("/noteOn"):
       noteOn(theOscMessage.get(0).intValue());
@@ -33,7 +33,5 @@ void oscEvent(OscMessage theOscMessage) {
     default:
       break;
   }
-  
-  
-  
+   
 }

@@ -1,5 +1,5 @@
 
-
+//GUI init
 public void guiInit() {
   
   cp5 = new ControlP5(this);
@@ -8,7 +8,7 @@ public void guiInit() {
   toggleValue = 0;
   
   
-  //ON OFF toggle
+  //ON/OFF toggle
   cp5.addToggle("toggleOnOff")
      .setPosition(40,100)
      .setSize(50,20);
@@ -23,7 +23,7 @@ public void guiInit() {
     .setDragDirection(Knob.VERTICAL);
 }
 
-
+//Toggle event
 void toggleOnOff(boolean flag) {
   if(flag) {
     toggleValue = 1;
@@ -34,7 +34,7 @@ void toggleOnOff(boolean flag) {
   println("a toggle event.");
 }
 
-
+//Volume knob event
 void volumeKnob(int value){
   volumeValue = value;
   sendOSCMessagge("/volumeValue", volumeValue);
@@ -42,7 +42,7 @@ void volumeKnob(int value){
   println("a knob event " + value);
 }
 
-
+//Testing-not relevant
 void keyPressed() {
   switch(key) {
     case('1'):
