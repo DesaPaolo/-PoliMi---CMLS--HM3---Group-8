@@ -1,13 +1,15 @@
 
 
 void setup() {
+  
+  size(1280, 750);
 
   oscInit();
   guiInit();
   midiInit();
   keyboardInit();
 
-  size(1280, 750);
+  
 
   bgColor = 0;
 }

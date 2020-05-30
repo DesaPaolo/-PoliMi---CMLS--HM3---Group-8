@@ -1,7 +1,7 @@
 
 //GUI init
 public void guiInit() {
-
+  
   cp5 = new ControlP5(this);
 
   bypassValue = 0;

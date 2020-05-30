@@ -1,3 +1,4 @@
+
 class Key {
 
   private float x;
@@ -47,7 +48,7 @@ class Key {
     if (this.colStroke==-1) 
       noStroke(); 
     else
-      stroke(this.colStroke);
+      stroke(this.colStroke);      
     rect(this.x, this.y, this.w, this.h);
     popMatrix();
   }
