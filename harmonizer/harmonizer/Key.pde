@@ -16,7 +16,7 @@ class Key {
 
 
   Key(float x_, float y_, 
-    float w_, float h_,     
+    float w_, float h_, 
     int midiNote_, 
     color colFill_, 
     color colStroke_, 
@@ -28,13 +28,13 @@ class Key {
     this.w = w_;
     this.h = h_;
 
-    
+
     this.midiNote = midiNote_;
 
     this.colFill = colFill_;
     this.colKey = colFill_;  // constant to reset to the original color
     this.colStroke = colStroke_; 
-    
+
 
     this.translatePVector = translatePVector_;
   }
@@ -51,16 +51,16 @@ class Key {
     rect(this.x, this.y, this.w, this.h);
     popMatrix();
   }
-  
-  public int getMidiNote(){
-      return this.midiNote;
+
+  public int getMidiNote() {
+    return this.midiNote;
   }
-  
-  public void setColFill(color col){
-      this.colFill = col;
+
+  public void setColFill(color col) {
+    this.colFill = col;
   }
-  
-  public color getColKey(){
-      return this.colKey;
+
+  public color getColKey() {
+    return this.colKey;
   }
 }

@@ -2,9 +2,7 @@
 import controlP5.*;
 ControlP5 cp5;
 
-Knob volume;
 ListBox l8;
-
 ListBox l3;
 ListBox l5;
 ListBox l7;
@@ -12,9 +10,19 @@ Toggle t_bypass;
 Toggle t_noob;
 Toggle t_delay;
 Toggle t_reverb;
+Knob volume;
+//flag
+int bypassValue;
+int noobValue;
+int delayValue;
+int reverbValue;
+//lists value
+int octaveValue;
+int thirdValue;
+int fifthValue;
+int seventhValue;
+//knob value
 int volumeValue;
-
-int toggleValue; //ON/OFF
 
 
 // OSC Open Sound Control
@@ -35,11 +43,13 @@ float bgColor;
 //Keyboard
 ArrayList<Key> keys;
 int[] blackRect = {0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0};
-int[] whiteKeysMidiNote = {36, 38, 40, 41, 43, 45, 47,
-                           48, 50, 52, 53, 55, 57, 59,
-                           60, 62, 64, 65, 67, 69, 71, 
-                           72, 74, 76, 77, 79, 81, 83, 84};
-int[] blackKeysMidiNote = {37, 39, 42, 44, 46,
-                           49, 51, 54, 56, 58,
-                           61, 63, 66, 68, 70, 
-                           73, 75, 78, 80, 82};
+int[] whiteKeysMidiNote = {
+  36, 38, 40, 41, 43, 45, 47, 
+  48, 50, 52, 53, 55, 57, 59, 
+  60, 62, 64, 65, 67, 69, 71, 
+  72, 74, 76, 77, 79, 81, 83, 84};
+int[] blackKeysMidiNote = {
+  37, 39, 42, 44, 46, 
+  49, 51, 54, 56, 58, 
+  61, 63, 66, 68, 70, 
+  73, 75, 78, 80, 82};

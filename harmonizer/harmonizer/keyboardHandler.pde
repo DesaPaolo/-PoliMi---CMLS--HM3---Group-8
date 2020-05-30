@@ -20,7 +20,6 @@ public void keyboardInit() {
   for (int x = 0; x < 29; x++) {   
 
     if (blackRect[x] == 1) {
-      println(j);
       keys.add ( new Key (30-(2 * x * width_black), 110, width_black, 140, blackKeysMidiNote[19-j], color(0), -1, new PVector(1094, 379) )); // -1 is for noStroke();
       j++;
     }
@@ -29,28 +28,28 @@ public void keyboardInit() {
 
 
 public void keyboardUpdate() {
-  
+
   //Red color for the pressed keys 
-  if(!tempNotes.isEmpty()){
-    for(Key k : keys) {
+  if (!tempNotes.isEmpty()) {
+    for (Key k : keys) {
       Boolean keyIsPressed = false;
       for (int i = 0; i < tempNotes.size(); i++) {
-        if(k.getMidiNote() == tempNotes.get(i).getPitch()){
-          keyIsPressed = true;        
+        if (k.getMidiNote() == tempNotes.get(i).getPitch()) {
+          keyIsPressed = true;
         }
       }
-      if(keyIsPressed) {
-        k.setColFill(color(255,0,0));
+      if (keyIsPressed) {
+        k.setColFill(color(255, 0, 0));
       } else {
-        k.setColFill(k.getColKey()); 
+        k.setColFill(k.getColKey());
       }
     }
   } else {
     for (Key k : keys) {
-     k.setColFill(k.getColKey());
+      k.setColFill(k.getColKey());
     }
   }
-  
+
   //Display keys
   for (Key k : keys) {
     k.display();
