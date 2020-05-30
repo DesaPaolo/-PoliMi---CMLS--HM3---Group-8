@@ -2,7 +2,6 @@
 (
 s.reboot;
 
-Server.default.options.device_("MME : Linea (2- Komplete Audio 2)");
 
 MIDIClient.init;
 MIDIIn.connectAll;
@@ -10,7 +9,7 @@ MIDIIn.connectAll;
 s.options.numInputBusChannels=8;
 s.options.numOutputBusChannels=8;
 
-/*//Receiver OSC Mess
+//Receiver OSC Mess
 ~listener = {|msg, time, replyAddr, recvPort|
 	if (msg[0] != "/status.reply", {
 		// Log all received messages to the console.
@@ -25,7 +24,7 @@ thisProcess.addOSCRecvFunc(~listener);
 
 // create the NetAddr (PROCESSING) for sending OSC message
 b = NetAddr.new("127.0.0.1", 12000);
-*/
+
 )
 
 
@@ -40,14 +39,14 @@ s.meter;
 SynthDef.new(\mic,{
     arg in=0, out=0, amp=0.2;
     var sig, freq, hasfreq;
-    sig = SoundIn.ar(in)*amp;
-    Out.ar([out, 4], sig);
+	sig = SoundIn.ar(in!2)*amp;
+    Out.ar([out, 0], sig);
 }).add;
 
 
 //Harmonizer
 SynthDef.new(\harmonizer, {
-    arg in=0, out=0, amp=1, release, gate=1, freq2, nn;
+    arg in=0, out=0, amp=2, release, gate=1, freq2, nn;
     var sig, ratio, freq, hasfreq, z;
     var env = Env.adsr(0.02, release);
     var gen = EnvGen.kr(env, gate, doneAction: Done.freeSelf);
@@ -56,8 +55,8 @@ SynthDef.new(\harmonizer, {
     # freq , hasfreq = Tartini.kr(sig);
     ratio = freq2 / freq;
     sig = PitchShift.ar(sig, pitchRatio:ratio);
-    //sig = Compander.ar(in: sig, control: sig, thresh: 0.005, slopeBelow: 10, slopeAbove: 1, clampTime: 0.01, relaxTime: 0.01);
-    Out.ar([[out,out+1],2] , sig*gen);
+    //sig = Compander.ar(in: sig, control: sig, thresh: 0.5, slopeBelow: 1, slopeAbove: 1, clampTime: 0.01, relaxTime: 0.01);
+    Out.ar([[out,out+1],2] , sig*gen*amp);
 }).add;
 
 
@@ -82,7 +81,7 @@ SynthDef.new(\harmonizer, {
 MIDIdef.noteOn(\noteon, {
     arg vel, nn, channel, src;
     [vel, nn, channel, src].postln;
-	//b.sendMsg("/noteOn", nn);
+	b.sendMsg("/noteOn", nn);
     ~num[nn] = Synth(\harmonizer, [\freq2, nn.midicps, \in,~pitchBus , \out, 0], ~pitchGroup);
 });
 
@@ -90,12 +89,11 @@ MIDIdef.noteOn(\noteon, {
 MIDIdef.noteOff(\noteoff, {
     arg vel, nn, channel, src;
     [vel, nn, channel, src].postln;
-	//b.sendMsg("/noteOff", nn);
+	b.sendMsg("/noteOff", nn);
     ~num[nn].release(0.1);
 });
 
 )
-
 
 //Recording (\Documents\Supercollider\Recordings)
 s.record(duration: 30);
