@@ -39,7 +39,7 @@ public void keyboardUpdate() {
         }
       }
       if (keyIsPressed) {
-        k.setColFill(color(255, 0, 0));
+        k.setColFill(color(255, 192, 203));
       } else {
         k.setColFill(k.getColKey());
       }

@@ -11,6 +11,11 @@ Toggle t_noob;
 Toggle t_delay;
 Toggle t_reverb;
 Knob volume;
+Textarea title;
+Textarea title2;
+Textarea title3;
+Textarea t_bypass2;
+Textarea t_bypass3;
 //flag
 int bypassValue;
 int noobValue;
