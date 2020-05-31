@@ -15,7 +15,7 @@ public void guiInit() {
   ControlFont font = new ControlFont(pfont, 14);
 
 title = cp5.addTextarea("ollarizer.")
-                  .setPosition(499,249)
+                  .setPosition(459,299)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -28,7 +28,7 @@ title.setText("ollarizer." );
 
 
 title3 = cp5.addTextarea("ollarizer3.")
-                  .setPosition(505,251)
+                  .setPosition(465,301)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -39,7 +39,7 @@ title3 = cp5.addTextarea("ollarizer3.")
 title3.setText("ollarizer." );
                   
  title2 = cp5.addTextarea("ollarizer2.")
-                  .setPosition(502,250)
+                  .setPosition(462,300)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -53,7 +53,7 @@ title2.setText("ollarizer." );
   //ON/OFF toggles
   
    t_bypass2 = cp5.addTextarea("bypass2")
-                  .setPosition(77,122)
+                  .setPosition(67,351)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -77,7 +77,7 @@ t_bypass2.setText("bypass." );
   t_bypass = cp5.addToggle("bypass")
     .setCaptionLabel("bypass.")
     .setValue(false)
-    .setPosition(80, 100)
+    .setPosition(70, 300)
     .setSize(50, 20)
     .setMode(ControlP5.SWITCH)
     .setColorBackground(color(255, 255, 255))
@@ -90,24 +90,31 @@ t_bypass2.setText("bypass." );
     .toUpperCase(false)
     .setSize(20);
     
- 
-    
-    
-    
-    
+
+    t_noob2 = cp5.addTextarea("noob2")
+                  .setPosition(69,415)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(64, 186, 213))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_noob2.setText("noob." ); 
     
     
     
 
   t_noob= cp5.addToggle("noob")
     .setCaptionLabel("noob.")
-    .setPosition(70, 300)
-    .setSize(50, 20)  
     .setValue(false)
+    .setPosition(70, 390)
+    .setSize(50, 20)  
     .setMode(ControlP5.SWITCH)
     .setColorBackground(color(64, 186, 213))
     .setColorActive(color(255, 255, 255))
     .setFont(font);
+
 
   cp5.getController("noob")
     .getCaptionLabel()
@@ -115,9 +122,22 @@ t_bypass2.setText("bypass." );
     .toUpperCase(false)
     .setSize(20);
 
+ t_delay2 = cp5.addTextarea("delay2")
+                  .setPosition(707,411)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_delay2.setText("delay." ); 
+
+
+
   t_delay= cp5.addToggle("delay_")
     .setCaptionLabel("delay.")
-    .setPosition(710, 100)
+    .setPosition(710, 390)
     .setSize(50, 20)  
     .setValue(false)
     .setMode(ControlP5.SWITCH)
@@ -130,10 +150,22 @@ t_bypass2.setText("bypass." );
     .setFont(font)
     .toUpperCase(false)
     .setSize(20);
+    
+    
+     t_reverb2 = cp5.addTextarea("reverb2")
+                  .setPosition(857,411)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_reverb2.setText("reverb." ); 
 
   t_reverb= cp5.addToggle("reverb")
     .setCaptionLabel("reverb.")
-    .setPosition(1030, 100)
+    .setPosition(860, 390)
     .setSize(50, 20)  
     .setValue(false)
     .setMode(ControlP5.SWITCH)
@@ -150,8 +182,8 @@ t_bypass2.setText("bypass." );
   //Lists
   l8 = cp5.addListBox("octave")
     .setCaptionLabel("octave.")
-    .setPosition(70, 360)
-    .setSize(120, 120)
+    .setPosition(149, 390)
+    .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
     .setColorBackground(color(64, 186, 213))
@@ -173,8 +205,8 @@ t_bypass2.setText("bypass." );
 
   l3 = cp5.addListBox("third")
     .setCaptionLabel("third.")
-    .setPosition(370, 360)
-    .setSize(120, 120)
+    .setPosition(266, 390)
+    .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
     .setColorBackground(color(64, 186, 213))
@@ -184,20 +216,22 @@ t_bypass2.setText("bypass." );
   //.setColorActive(color(0))
   //.setColorForeground(color(255, 100,0));
 
-  l3.addItem("maj.", 1);
-  l3.addItem("min.", 2);
+  
 
   cp5.getController("third")
     .getCaptionLabel()
     .setFont(font)
     .toUpperCase(false)
     .setSize(17);
+    
+    l3.addItem("maj.", 1);
+  l3.addItem("min.", 2);
 
 
   l5 = cp5.addListBox("fifth")
     .setCaptionLabel("fifth.")
-    .setPosition(710, 360)
-    .setSize(120, 120)
+    .setPosition(383, 390)
+    .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
     .setColorBackground(color(64, 186, 213))
@@ -220,8 +254,8 @@ t_bypass2.setText("bypass." );
 
   l7 = cp5.addListBox("seventh")
     .setCaptionLabel("seventh.")
-    .setPosition(1030, 360)
-    .setSize(120, 120)
+    .setPosition(500, 390)
+    .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
     .setColorBackground(color(64, 186, 213))
@@ -241,17 +275,29 @@ t_bypass2.setText("bypass." );
   l7.addItem("min.", 2);
 
   //Volume knob
+  
+   t_volume2 = cp5.addTextarea("volume2")
+                  .setPosition(1054,451)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_volume2.setText("volume." ); 
+  
   volume = cp5.addKnob("volume")
     .setCaptionLabel("volume.")
     .setRange(0, 100)
     .setValue(50)
-    .setPosition(370, 70)
+    .setPosition(1050, 350)
     .setRadius(50)
     .setDragDirection(Knob.VERTICAL)
     .setFont(font)
     .setColorForeground(color(255))
     .setColorBackground(color(255, 128, 176))
-    .setColorActive(color(255,255,0));
+    .setColorActive(color(64, 186, 213));
 
     cp5.getController("volume")
     .getCaptionLabel()
@@ -278,8 +324,10 @@ void bypass(boolean flag) {
 void noob(boolean flag) {
   if (flag) {
     noobValue = 1;
+     
   } else {
     noobValue = 0;
+  
   }
   sendOSCMessagge("/noob", noobValue);
   println("a toggle event: " + noobValue);
