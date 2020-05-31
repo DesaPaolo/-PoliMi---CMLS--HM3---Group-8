@@ -53,7 +53,7 @@ title2.setText("ollarizer." );
   //ON/OFF toggles
   
    t_bypass2 = cp5.addTextarea("bypass2")
-                  .setPosition(67,351)
+                  .setPosition(67,321)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -324,9 +324,25 @@ void bypass(boolean flag) {
 void noob(boolean flag) {
   if (flag) {
     noobValue = 1;
+    cp5.getController("octave")
+    .hide();
+    cp5.getController("third")
+    .hide();
+    cp5.getController("fifth")
+    .hide();
+    cp5.getController("seventh")
+    .hide();
      
   } else {
     noobValue = 0;
+    cp5.getController("octave")
+    .show();
+    cp5.getController("third")
+    .show();
+    cp5.getController("fifth")
+    .show();
+    cp5.getController("seventh")
+    .show();
   
   }
   sendOSCMessagge("/noob", noobValue);
