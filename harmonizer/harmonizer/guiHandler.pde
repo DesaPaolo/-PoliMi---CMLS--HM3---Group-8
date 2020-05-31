@@ -15,7 +15,7 @@ public void guiInit() {
   ControlFont font = new ControlFont(pfont, 14);
 
 title = cp5.addTextarea("ollarizer.")
-                  .setPosition(459,9)
+                  .setPosition(449,17)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -28,7 +28,7 @@ title.setText("ollarizer." );
 
 
 title3 = cp5.addTextarea("ollarizer3.")
-                  .setPosition(465,11)
+                  .setPosition(455,19)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -39,7 +39,7 @@ title3 = cp5.addTextarea("ollarizer3.")
 title3.setText("ollarizer." );
                   
  title2 = cp5.addTextarea("ollarizer2.")
-                  .setPosition(462,10)
+                  .setPosition(452,18)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -132,6 +132,9 @@ t_noob2.setText("noob." );
                   //.setColorForeground(color(255,100));
                   ;
 t_delay2.setText("delay." ); 
+
+
+ 
 
 
 
@@ -297,7 +300,8 @@ t_volume2.setText("volume." );
     .setFont(font)
     .setColorForeground(color(255))
     .setColorBackground(color(255, 128, 176))
-    .setColorActive(color(64, 186, 213));
+    .setColorActive(color(64, 186, 213))
+    .setColorValueLabel(color(255, 128, 176));
 
     cp5.getController("volume")
     .getCaptionLabel()
@@ -313,8 +317,121 @@ t_volume2.setText("volume." );
 void bypass(boolean flag) {
   if (flag) {
     bypassValue = 1;
+    cp5.getController("delay_")
+    .hide();
+    t_delay2.setText("" );
+    t_delay3.setText("" );
+    t_delay4.setText("" );
+    cp5.getController("volume")
+    .hide();
+    t_volume2.setText("" ); 
+    cp5.getController("noob")
+    .hide();
+    t_noob2.setText("" ); 
+    cp5.getController("reverb")
+    .hide();
+    t_reverb2.setText("" ); 
+    t_reverb3.setText("" );
+    t_reverb4.setText("" );
+    cp5.getController("octave")
+    .hide();
+    cp5.getController("third")
+    .hide();
+    cp5.getController("fifth")
+    .hide();
+    cp5.getController("seventh")
+    .hide();
+    ollare = cp5.addTextarea("ollaree")
+                  .setPosition(159,121)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare.setText("ollareollareollareollare" );
+ollare2 = cp5.addTextarea("ollareee")
+                  .setPosition(175,121)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(64, 186, 213))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare2.setText("ollareollareollareollare" );
+ollare3 = cp5.addTextarea("ollareeee")
+                  .setPosition(167,121)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare3.setText("ollareollareollareollare" );
+    
+    
   } else {
     bypassValue = 0;
+    cp5.getController("delay_")
+    .show();
+    t_delay2.setText("delay." );
+    t_delay3.setText("delay." );
+    t_delay4.setText("delay." );
+    cp5.getController("volume")
+    .show();
+    t_volume2.setText("volume." ); 
+    cp5.getController("noob")
+    .show();
+    t_noob2.setText("noob." );
+    cp5.getController("reverb")
+    .show();
+    t_reverb2.setText("reverb." );
+    t_reverb3.setText("reverb." );
+    t_reverb4.setText("reverb." );
+    cp5.getController("octave")
+    .show();
+    cp5.getController("third")
+    .show();
+    cp5.getController("fifth")
+    .show();
+    cp5.getController("seventh")
+    .show();
+    ollare = cp5.addTextarea("ollaree")
+                  .setPosition(100,161)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare.setText("ollareollareollareollare" );
+   ollare2 = cp5.addTextarea("ollareee")
+                  .setPosition(100,161)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare2.setText("ollareollareollareollare" );
+    ollare3 = cp5.addTextarea("ollareeee")
+                  .setPosition(100,161)
+                  .setSize(1100,100)
+                  .setFont(createFont("Courier new",60))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+ollare3.setText("ollareollareollareollare" );
   }
   sendOSCMessagge("/bypass", bypassValue);
   println("a toggle event: " + bypassValue);
@@ -332,7 +449,7 @@ void noob(boolean flag) {
     .hide();
     cp5.getController("seventh")
     .hide();
-     
+
   } else {
     noobValue = 0;
     cp5.getController("octave")
@@ -353,30 +470,112 @@ void noob(boolean flag) {
 void delay_(boolean flag) { // "delay" is a processing function ( -.-")
   if (flag) {
     delayValue = 1;
-    cp5.getController("delay_")
-    .getCaptionLabel()
-    .setColor(color(255,192,203))
-    .toUpperCase(false)
-    .setSize(15);
+    t_delay3 = cp5.addTextarea("delay3")
+                  .setPosition(827,161)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",18))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_delay3.setText("delay." );
+
+t_delay4 = cp5.addTextarea("delay4")
+                  .setPosition(827,177)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",16))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_delay4.setText("delay." );
   
   } else {
     delayValue = 0;
-    cp5.getController("delay_")
-    .getCaptionLabel()
-    .setColor(color(255,255,255))
-    .toUpperCase(false)
-    .setSize(15);
-    
+    t_delay3 = cp5.addTextarea("delay3")
+                  .setPosition(827,161)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",18))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_delay3.setText("delay." );
+
+t_delay4 = cp5.addTextarea("delay4")
+                  .setPosition(827,177)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",16))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_delay4.setText("delay." );
   }
   sendOSCMessagge("/delay", delayValue);
   println("a toggle event: " + delayValue);
 }
 
+
+
+
+
+//REVERBBBBBBBBBBBBBBBBBBB
 void reverb(boolean flag) {
   if (flag) {
     reverbValue = 1;
+    t_reverb3 = cp5.addTextarea("reverb3")
+                  .setPosition(940,147)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_reverb3.setText("reverb." );
+
+t_reverb4 = cp5.addTextarea("reverb4")
+                  .setPosition(940,151)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_reverb4.setText("reverb." );
   } else {
     reverbValue = 0;
+    t_reverb3 = cp5.addTextarea("reverb3")
+                  .setPosition(940,147)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 128, 176))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_reverb3.setText("reverb." );
+
+t_reverb4 = cp5.addTextarea("reverb4")
+                  .setPosition(940,151)
+                  .setSize(400,70)
+                  .setFont(createFont("Courier new",20))
+                  .setLineHeight(14)
+                  .setColor(color(255, 255, 255))
+                  .hide()
+                  //.setColorBackground(color(255,100))
+                  //.setColorForeground(color(255,100));
+                  ;
+t_reverb4.setText("reverb." );
   }
   sendOSCMessagge("/reverb", reverbValue);
   println("a toggle event: " + reverbValue);
