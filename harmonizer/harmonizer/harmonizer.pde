@@ -2,7 +2,7 @@
 
 void setup() {
   
-  size(1280, 750);
+  size(1240, 450);
 
   oscInit();
   guiInit();

@@ -21,8 +21,8 @@ s.options.numOutputBusChannels=8;
 			0, {~micSynth.set(\outpitch, ~toharmoBus , \outclean, ~cleanBus);}
 		)},
 		'/noob', {switch (msg[1],
-			0, {~noobSynth.free;},
-			1, {~noobSynth = Synth( \noobHarmonizer, [\in, ~toharmoBus , \out, ~pitchedBus], ~pitchGroup);}
+			1, {~noobSynth.free;},
+			0, {~noobSynth = Synth( \noobHarmonizer, [\in, ~toharmoBus , \out, ~pitchedBus], ~pitchGroup);}
 		)},
 		'/delay', {switch (msg[1],
 			0, {~delaySynth.set(\mix, -1);},
@@ -62,7 +62,6 @@ b = NetAddr.new("127.0.0.1", 12000);
 //I/O meter
 s.meter;
 
-s.latency = 0.30;
 
 //SynthDef
 (

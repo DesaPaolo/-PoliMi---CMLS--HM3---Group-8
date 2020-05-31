@@ -14,8 +14,21 @@ Knob volume;
 Textarea title;
 Textarea title2;
 Textarea title3;
+Textarea t;
 Textarea t_bypass2;
 Textarea t_bypass3;
+Textarea t_noob2;
+Textarea t_delay2;
+Textarea t_delay3;
+Textarea t_delay4;
+Textarea t_reverb2;
+Textarea t_reverb3;
+Textarea t_reverb4;
+Textarea t_volume2;
+Textarea ollare;
+Textarea ollare2;
+Textarea ollare3;
+
 //flag
 int bypassValue;
 int noobValue;
