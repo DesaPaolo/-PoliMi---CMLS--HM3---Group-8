@@ -15,7 +15,7 @@ public void guiInit() {
   ControlFont font = new ControlFont(pfont, 14);
 
 title = cp5.addTextarea("ollarizer.")
-                  .setPosition(459,299)
+                  .setPosition(459,9)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -28,7 +28,7 @@ title.setText("ollarizer." );
 
 
 title3 = cp5.addTextarea("ollarizer3.")
-                  .setPosition(465,301)
+                  .setPosition(465,11)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -39,7 +39,7 @@ title3 = cp5.addTextarea("ollarizer3.")
 title3.setText("ollarizer." );
                   
  title2 = cp5.addTextarea("ollarizer2.")
-                  .setPosition(462,300)
+                  .setPosition(462,10)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",60))
                   .setLineHeight(14)
@@ -53,7 +53,7 @@ title2.setText("ollarizer." );
   //ON/OFF toggles
   
    t_bypass2 = cp5.addTextarea("bypass2")
-                  .setPosition(67,321)
+                  .setPosition(67,51)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -77,7 +77,7 @@ t_bypass2.setText("bypass." );
   t_bypass = cp5.addToggle("bypass")
     .setCaptionLabel("bypass.")
     .setValue(false)
-    .setPosition(70, 300)
+    .setPosition(70, 30)
     .setSize(50, 20)
     .setMode(ControlP5.SWITCH)
     .setColorBackground(color(255, 255, 255))
@@ -92,7 +92,7 @@ t_bypass2.setText("bypass." );
     
 
     t_noob2 = cp5.addTextarea("noob2")
-                  .setPosition(69,415)
+                  .setPosition(69,145)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -108,7 +108,7 @@ t_noob2.setText("noob." );
   t_noob= cp5.addToggle("noob")
     .setCaptionLabel("noob.")
     .setValue(false)
-    .setPosition(70, 390)
+    .setPosition(70, 120)
     .setSize(50, 20)  
     .setMode(ControlP5.SWITCH)
     .setColorBackground(color(64, 186, 213))
@@ -123,7 +123,7 @@ t_noob2.setText("noob." );
     .setSize(20);
 
  t_delay2 = cp5.addTextarea("delay2")
-                  .setPosition(707,411)
+                  .setPosition(827,141)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -137,7 +137,7 @@ t_delay2.setText("delay." );
 
   t_delay= cp5.addToggle("delay_")
     .setCaptionLabel("delay.")
-    .setPosition(710, 390)
+    .setPosition(830, 120)
     .setSize(50, 20)  
     .setValue(false)
     .setMode(ControlP5.SWITCH)
@@ -153,7 +153,7 @@ t_delay2.setText("delay." );
     
     
      t_reverb2 = cp5.addTextarea("reverb2")
-                  .setPosition(857,411)
+                  .setPosition(939,141)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -165,7 +165,7 @@ t_reverb2.setText("reverb." );
 
   t_reverb= cp5.addToggle("reverb")
     .setCaptionLabel("reverb.")
-    .setPosition(860, 390)
+    .setPosition(942, 120)
     .setSize(50, 20)  
     .setValue(false)
     .setMode(ControlP5.SWITCH)
@@ -182,7 +182,7 @@ t_reverb2.setText("reverb." );
   //Lists
   l8 = cp5.addListBox("octave")
     .setCaptionLabel("octave.")
-    .setPosition(149, 390)
+    .setPosition(182, 120)
     .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
@@ -205,7 +205,7 @@ t_reverb2.setText("reverb." );
 
   l3 = cp5.addListBox("third")
     .setCaptionLabel("third.")
-    .setPosition(266, 390)
+    .setPosition(344, 120)
     .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
@@ -230,7 +230,7 @@ t_reverb2.setText("reverb." );
 
   l5 = cp5.addListBox("fifth")
     .setCaptionLabel("fifth.")
-    .setPosition(383, 390)
+    .setPosition(506, 120)
     .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
@@ -254,7 +254,7 @@ t_reverb2.setText("reverb." );
 
   l7 = cp5.addListBox("seventh")
     .setCaptionLabel("seventh.")
-    .setPosition(500, 390)
+    .setPosition(668, 120)
     .setSize(100, 100)
     .setItemHeight(20)
     .setBarHeight(20)
@@ -277,7 +277,7 @@ t_reverb2.setText("reverb." );
   //Volume knob
   
    t_volume2 = cp5.addTextarea("volume2")
-                  .setPosition(1054,451)
+                  .setPosition(1060,181)
                   .setSize(400,70)
                   .setFont(createFont("Courier new",20))
                   .setLineHeight(14)
@@ -291,7 +291,7 @@ t_volume2.setText("volume." );
     .setCaptionLabel("volume.")
     .setRange(0, 100)
     .setValue(50)
-    .setPosition(1050, 350)
+    .setPosition(1055, 80)
     .setRadius(50)
     .setDragDirection(Knob.VERTICAL)
     .setFont(font)

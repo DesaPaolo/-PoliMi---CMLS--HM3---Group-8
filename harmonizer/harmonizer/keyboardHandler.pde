@@ -12,7 +12,7 @@ public void keyboardInit() {
 
   // white Rect
   for (int i = 0; i < 29; i++) { 
-    keys.add ( new Key (30-(i*width_white), 110, width_white, 186, whiteKeysMidiNote[28-i], color(255), color(0), new PVector(1103, 380) ));
+    keys.add ( new Key (30-(i*width_white), 110, width_white, 186, whiteKeysMidiNote[28-i], color(255), color(0), new PVector(1103, 110) ));
   }
 
   //black Rect
@@ -20,7 +20,7 @@ public void keyboardInit() {
   for (int x = 0; x < 29; x++) {   
 
     if (blackRect[x] == 1) {
-      keys.add ( new Key (30-(2 * x * width_black), 110, width_black, 140, blackKeysMidiNote[19-j], color(0), -1, new PVector(1094, 379) )); // -1 is for noStroke();
+      keys.add ( new Key (30-(2 * x * width_black), 110, width_black, 140, blackKeysMidiNote[19-j], color(0), -1, new PVector(1094, 109) )); // -1 is for noStroke();
       j++;
     }
   }
