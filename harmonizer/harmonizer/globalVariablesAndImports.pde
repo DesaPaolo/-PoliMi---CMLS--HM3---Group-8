@@ -27,7 +27,7 @@ int thirdValue;
 int fifthValue;
 int seventhValue;
 //knob value
-int volumeValue;
+float volumeValue;
 
 
 // OSC Open Sound Control

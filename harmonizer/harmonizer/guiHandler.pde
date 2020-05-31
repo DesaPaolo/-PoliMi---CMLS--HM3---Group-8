@@ -90,14 +90,6 @@ t_bypass2.setText("bypass." );
     .toUpperCase(false)
     .setSize(20);
     
- 
-    
-    
-    
-    
-    
-    
-    
 
   t_noob= cp5.addToggle("noob")
     .setCaptionLabel("noob.")
@@ -242,7 +234,7 @@ t_bypass2.setText("bypass." );
 
   //Volume knob
   volume = cp5.addKnob("volume")
-    .setCaptionLabel("volume.")
+    .setCaptionLabel("volumizer.")
     .setRange(0, 100)
     .setValue(50)
     .setPosition(370, 70)
@@ -345,7 +337,7 @@ void seventh(int value) {
 
 //Volume knob event
 void volume(int value) {
-  volumeValue = value;
-  sendOSCMessagge("/volume", volumeValue);
+  volumeValue = map(value, 0 ,100, 0, 1.8);
+  sendOSCMessaggeVolume("/volume", volumeValue);
   println("a knob event: " + volumeValue);
 }

@@ -13,6 +13,12 @@ public void sendOSCMessagge(String addressPattern, int value) {
   osc.send(msg, supercollider);
 }
 
+public void sendOSCMessaggeVolume(String addressPattern, float volumeValue) {
+  OscMessage msg = new OscMessage(addressPattern);
+  msg.add(volumeValue);
+  osc.send(msg, supercollider);
+}
+
 //Listen Supercollider
 void oscEvent(OscMessage theOscMessage) {
 
