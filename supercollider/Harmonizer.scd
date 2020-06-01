@@ -147,6 +147,7 @@ SynthDef(\reverb, {
 
 //Synths
 ~micSynth = Synth(\mic , [\in,0 , \outpitch, ~toharmoBus, \outclean, ~cleanBus ], ~micGroup);
+~noobSynth = Synth( \noobHarmonizer, [\in, ~toharmoBus , \out, ~pitchedBus], ~pitchGroup);
 ~mixSynth = Synth.head(~effectGroup, \mix, [\inclean, ~cleanBus, \inpitch, ~pitchedBus, \out, ~mixBus], ~effectGroup,);
 ~delaySynth = Synth.after(~mixSynth, \delay, [\in, ~mixBus , \out, ~effectBus1 ], ~effectGroup);
 ~reverbSynth = Synth.after(~delaySynth, \reverb, [\in, ~effectBus1 , \out, 0],~effectGroup);
